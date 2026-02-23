@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Student Growth & Opportunity Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand img {
+            width: 50px;
+            height: auto;
+        }
+
+        .brand h1 {
+            font-family: 'Zilla Slab', serif; /* Blocky, strong font similar to your logo text */
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+  </style>
+</head>
+<body>
+  <div id="authModal" class="modal">
+  <div class="modal-content">
+    <h2>Welcome</h2>
+    <div id="loginSection">
+      <h3>Login</h3>
+      <input type="text" id="loginName" placeholder="Enter your name">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+    </div>
+
+    <div id="signupSection" style="display:none;">
+      <h3>Sign Up</h3>
+      <input type="text" id="signupName" placeholder="Full Name">
+      <input type="text" id="signupYear" placeholder="Year (e.g. 2nd Year)">
+      <input type="text" id="signupContact" placeholder="Contact No">
+      <input type="text" id="signupCollege" placeholder="College/University"> <br>
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+  </div>
+</div>
+<div class="brand">
+            <img src="logo.jpeg" alt="Learnscrew AI Robot Logo" id="nav-logo"> 
+            <h1>Learnscrew</h1>
+        </div>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Student Growth Tracker</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#solution">Solution</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#about">About</a></li>
+      
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home">
+    <h1>Empowering Students with AI-Driven Growth & Opportunities</h1>
+    <p>Personalized learning, progress tracking, and real-world opportunities — all in one platform.</p>
+    
+  </header>
+
+  <!-- Problem Statement -->
+  <section id="problem">
+    <h2>The Challenge</h2>
+    <p>Students lack a unified platform for personalized learning, progress tracking, and hackathon/internship opportunities.</p>
+  </section>
+
+  <!-- Solution -->
+  <section id="solution">
+    <h2>Our Solution</h2>
+    <p>AI-Powered Student Growth & Opportunity Tracker</p>
+    <ul>
+      <li>Personalized learning paths</li>
+      <li>Real-time progress dashboards</li>
+      <li>Curated hackathon & internship listings</li>
+      <li>AI-driven recommendations</li>
+    </ul>
+  </section>
+
+  <!-- Features -->
+ <section id="features">
+  <h2>Key Features</h2>
+  <div class="features-grid">
+    <div class="feature-card" role="button" aria-expanded="false">
+      <div class="card-header">📚Personalized Learning </div>
+      <div class="feature-details">Custom paths tailored to your specific goals and pace.
+
+        <ol type="I">
+        <li>
+         <h5>Study resoures📚</h5> 
+        </li>
+        <li>
+        <h5>Language Learning 🎓</h5>
+        </li>
+        <li>
+           <h5>
+          -Skill development-
+        </h5>
+        </li>
+      </ol>
+    
+      </div>
+        </li>
+      
+    </div>
+    
+    <div class="feature-card" role="button" aria-expanded="false">
+      <div class="card-header">📊 Progress Tracking</div>
+      <div class="feature-details">Visual insights into your growth with weekly reports.
+        <br>Check till where you have completed✅
+      </div>
+    </div>
+
+    <div class="feature-card" role="button" aria-expanded="false">
+      <div class="card-header">💼 Opportunities Hub</div>
+      <div class="feature-details">
+        <ol type="i">
+             <li>   Mega Hackathon 2026
+                    📅 Feb 28 – Mar 1, 2026
+                    🌐 Free online global hackathon with prizes. <br>
+                   🔗 Register:<a href="https://mega-hackathon-2026-students.devpost.com/" target="_blank">mega hackathon</a>
+ </li> 
+ <li>
+   EU Code Week Hackathons Finals
+   📅 Mar 11, 2026
+ <br>
+ 🔗 Register: <a href="https://codeweek.eu/blog/eu-code-week-hackathons-finals-2026-registrations-open/" target="_blank">Eu Code</a>
+ </li>
+ <li>
+   WCE Hackathon 2026
+📍 WCE, Sangli (India) 
+📅 Online idea submission: 2–25 Feb 2026
+📅 Offline build: 20–21 Mar 2026 
+
+🔗 Register: <a href="https://www.wcehackathon.in/" target="_blank">WCE Hackathon</a>
+ </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="feature-card" role="button" aria-expanded="false">
+      <div class="card-header">🤝 Community & Mentorship</div>
+      <div class="feature-details">Connect with industry experts and peer-led study groups.
+        <ol type="I">
+          <li>freeCodeCamp Forum 
+📌 Great for beginners to ask questions, get feedback, and learn <br> <a href="https://forum.freecodecamp.org/%E2%81%A0%EF%BF%BD">FreeCodeCamp</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Dashboard Mockup -->
+  <section id="dashboard">
+    <h2>Student Dashboard (Demo)</h2>
+    
+
+    <div class="opportunities">
+      <h3>Upcoming Opportunities</h3>
+      <ul id="opportunityList"></ul>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Our mission is to bridge the gap between learning and real-world opportunities. Every student deserves AI-powered guidance to achieve their goals.</p>
+  </section>
+
+  <!-- Contact -->
+ 
+
+  <!-- Footer -->
+  <footer>
+    <p>Student Growth Tracker</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
